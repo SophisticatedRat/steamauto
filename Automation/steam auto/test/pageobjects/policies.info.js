@@ -1,10 +1,7 @@
 import { $ } from '@wdio/globals'
-import Page from './sitenav.js';
+import site from './sitenav.js';
 
-/**
- * sub page containing specific selectors and methods for a specific page
- */
-class Testauto2 extends Page {
+class policies extends site {
 
     get prpo(){
         return $('//a[@href="https://store.steampowered.com/privacy_agreement/?snr=1_44_44_"]')
@@ -23,7 +20,7 @@ class Testauto2 extends Page {
     }
 
 
-    async test2(){
+    async policyRun(){
         await browser.setWindowSize(2000,1000)
         await expect(browser).toHaveUrl('https://store.steampowered.com/')
         await browser.scroll(0,6000)
@@ -49,4 +46,4 @@ class Testauto2 extends Page {
     }
 }
 
-export default new Testauto2();
+export default new policies();

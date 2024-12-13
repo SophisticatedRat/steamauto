@@ -1,10 +1,7 @@
 import { $ } from '@wdio/globals'
-import Page from './sitenav.js';
+import site from './sitenav.js';
 
-/**
- * sub page containing specific selectors and methods for a specific page
- */
-class Testauto3 extends Page {
+class details extends site {
 
     get casual(){
         return $('//a[@href="https://store.steampowered.com/genre/Casual/?snr=1_5_9__408"]')
@@ -23,7 +20,7 @@ class Testauto3 extends Page {
     }
 
 
-    async test3(){
+    async detailCheck(){
         await browser.setWindowSize(2000,1000)
         await expect(browser).toHaveUrl('https://store.steampowered.com/app/1290000/PowerWash_Simulator/')
         await browser.scroll(0,1500)
@@ -56,4 +53,4 @@ class Testauto3 extends Page {
     }
 }
 
-export default new Testauto3();
+export default new details();
