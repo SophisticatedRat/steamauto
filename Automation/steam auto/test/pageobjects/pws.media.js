@@ -1,4 +1,3 @@
-import { $ } from '@wdio/globals'
 import site from './sitenav.js';
 
 class carousel extends site {
